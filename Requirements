@@ -1,0 +1,4 @@
+python -m pip install altair
+python -m pip install pandas
+python -m pip install numpy
+python -m pip install streamlit
