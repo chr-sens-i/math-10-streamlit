@@ -2,3 +2,6 @@ altair
 numpy
 pandas
 streamlit
+sklearn
+sklearn.datasets
+sklearn.cluster
