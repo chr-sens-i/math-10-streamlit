@@ -159,3 +159,6 @@ st.write("We will be using 24 neurons for the hidden layers this time, of which 
 st.write("Our loss value on the final iteration is "+str(fit1.history['loss'][-1])+", and our validation loss value is "+str(fit1.history['val_loss'][-1])+".")
 st.write("Our accuracy value on the final iteration is "+str(fit1.history['accuracy'][-1])+", and our validation accuracy value is "+str(fit1.history['val_accuracy'][-1])+".")
 st.write("This shows that our model is slightly overfitted, as the two loss values are still slightly different, but our accuracy is still low, so even if our data is only slightly overfitted, the accuracy is too low to be able to consistently choose the correct country of origin from the measures of quality.")
+
+st.header("References")
+st.write("Multiple Altair Charts: https://altair-viz.github.io/user_guide/compound_charts.html#repeated-charts")
