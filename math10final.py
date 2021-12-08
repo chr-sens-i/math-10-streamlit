@@ -163,3 +163,4 @@ st.write("This shows that our model is slightly overfitted, as the two loss valu
 st.header("References")
 st.write("Multiple Altair Charts: https://altair-viz.github.io/user_guide/compound_charts.html#repeated-charts")
 st.write("Converting 2 Lists into a Single Dictionary: https://www.tutorialspoint.com/convert-two-lists-into-a-dictionary-in-python")
+st.write("Streamlit Expander: https://docs.streamlit.io/library/api-reference/layout/st.expander")
