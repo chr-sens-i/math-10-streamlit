@@ -46,7 +46,7 @@ acidS = alt.Chart(cf).mark_square().encode(
     alt.Y('Sweetness:Q', scale = alt.Scale(zero = False)),
     #size = 'Total Cup Points',
     color = alt.Color('Species', scale=alt.Scale(scheme='set1')),
-    tooltip = ['Unnamed: 0','Species','Total Cup Points']
+    tooltip = ['Unnamed\: 0','Species','Total Cup Points']
 ).interactive()
 
 st.altair_chart(acidS, use_container_width=True)
@@ -63,7 +63,7 @@ chart2 = alt.Chart(cf).mark_circle().encode(
     alt.X(xplot,scale = alt.Scale(zero = False)),
     alt.Y(yplot, scale = alt.Scale(zero = False)),
     color = alt.Color('Species', scale=alt.Scale(scheme='dark2')),
-    tooltip = ['Unnamed: 0','Species']
+    tooltip = ['Unnamed\: 0','Species']
 ).interactive()
 
 st.altair_chart(chart2, use_container_width=True)
@@ -74,7 +74,7 @@ multchart = alt.Chart(cf).mark_point().encode(
     alt.X(alt.repeat("column"), type='quantitative',scale = alt.Scale(zero = False)),
     alt.Y(alt.repeat("row"), type='quantitative',scale = alt.Scale(zero = False)),
     color = 'Species',
-    tooltip = ['Unnamed: 0','Species']
+    tooltip = ['Unnamed\: 0','Species']
     ).properties(
     width=200,
     height=200
@@ -148,6 +148,12 @@ else:
     fit2 = st.session_state['fit2']
     
 #Species NN
+fi1 = pd.DataFrame(fit2.history['val_loss'],fit2.history['loss'])
+f1chart  = alt.Chart(fi1).mark_circle().encode(
+    x = '0',
+    y = '1'
+    )
+st.altair_chart(f1chart)
 st.subheader("Differentiating Coffee Species")
 st.write("Let's see if we can use a neural network to identify coffee species by qualities of measurement.")
 st.write("I will be using a neural network with 14 input variables, two hidden layers with 16 neurons, and an output layer with one option, using binary crossentropy. They will all use sigmoid activation")
@@ -159,8 +165,3 @@ st.write("We will be using 24 neurons for the hidden layers this time, of which 
 st.write("Our loss value on the final iteration is "+str(fit1.history['loss'][-1])+", and our validation loss value is "+str(fit1.history['val_loss'][-1])+".")
 st.write("Our accuracy value on the final iteration is "+str(fit1.history['accuracy'][-1])+", and our validation accuracy value is "+str(fit1.history['val_accuracy'][-1])+".")
 st.write("This shows that our model is slightly overfitted, as the two loss values are still slightly different, but our accuracy is still low, so even if our data is only slightly overfitted, the accuracy is too low to be able to consistently choose the correct country of origin from the measures of quality.")
-
-st.header("References")
-st.write("Multiple Altair Charts: https://altair-viz.github.io/user_guide/compound_charts.html#repeated-charts")
-st.write("Converting 2 Lists into a Single Dictionary: https://www.tutorialspoint.com/convert-two-lists-into-a-dictionary-in-python")
-st.write("Streamlit Expander: https://docs.streamlit.io/library/api-reference/layout/st.expander")
