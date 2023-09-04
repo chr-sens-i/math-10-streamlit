@@ -150,8 +150,8 @@ else:
 #Species NN
 fi1 = pd.DataFrame(fit2.history['val_loss'],fit2.history['loss'])
 f1chart  = alt.Chart(fi1).mark_circle().encode(
-    x = '0',
-    y = '1'
+    #x = '0',
+    #y = '1'
     )
 st.altair_chart(f1chart)
 st.subheader("Differentiating Coffee Species")
