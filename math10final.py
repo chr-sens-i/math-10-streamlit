@@ -148,10 +148,12 @@ else:
     fit2 = st.session_state['fit2']
     
 #Species NN
-fi1 = pd.DataFrame([fit2.history['val_loss'],fit2.history['loss']])
-f1chart  = alt.Chart(fi1).mark_circle().encode(
-    #x = '0',
-    #y = '1'
+fi1 = pd.DataFrame({'val_loss':fit2.history['val_loss'],'loss':fit2.history['loss']})
+fi1Data = fi1.reset_index().melt('index')
+f1chart  = alt.Chart(fi1Data).mark_line().encode(
+    x = 'index',
+    y = 'value',
+    color = 'variable'
     )
 st.altair_chart(f1chart)
 st.subheader("Differentiating Coffee Species")
