@@ -148,7 +148,7 @@ else:
     fit2 = st.session_state['fit2']
     
 #Species NN
-fi1 = pd.DataFrame(fit2.history['val_loss'],fit2.history['loss'])
+fi1 = pd.DataFrame([fit2.history['val_loss'],fit2.history['loss']])
 f1chart  = alt.Chart(fi1).mark_circle().encode(
     #x = '0',
     #y = '1'
