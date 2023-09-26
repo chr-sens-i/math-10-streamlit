@@ -8,7 +8,7 @@ from tensorflow import keras
 #Title and where to find dataset
 st.title("Analysis of Green Coffee")
 st.write("The coffee dataset can be obtained from [Kaggle](https://www.kaggle.com/volpatto/coffee-quality-database-from-cqi?select=merged_data_cleaned.csv).")
-st.write("The code for this app can be found on [GitHub](https://github.com/mnhkkro/math-10-streamlit). The file name is math10final.py")
+st.write("The code for this app can be found on [GitHub](https://github.com/mnhkkro/math-10-streamlit). The file name is coffee-analysis.py")
 st.header("Description of Dataset")
 st.write("This dataset consists of different measures of quality of green coffee and where they originated from. The measures of quality are aroma, flavor, aftertaste, acidity, body, balance, uniformity, clean cup, sweetness. cupper points, and total cup points. This last measure is a sum of the others. Other measures in this dataset are number of defects and moisture.")
 
