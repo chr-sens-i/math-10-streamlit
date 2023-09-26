@@ -2,6 +2,6 @@ altair
 numpy
 pandas
 streamlit
-sklearn
+scikit-learn
 tensorflow
 keras
